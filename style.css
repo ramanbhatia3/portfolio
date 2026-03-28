@@ -741,3 +741,114 @@ a {
     font-style: italic;
     font-weight: 600;
 }
+
+.footer {
+    margin-top: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: grid;
+    /* This creates neat columns. 3 on desktop, 2 on mobile */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem 2rem;
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.footer-links a {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--foreground);
+}
+
+.footer-socials {
+    display: grid;
+    /* Forces exactly 4 icons per row */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--text-secondary);
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    color: var(--foreground);
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+    border-color: var(--text-secondary);
+}
+
+.social-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-divider {
+    height: 1px;
+    background-color: var(--border);
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+@media (min-width: 640px) {
+    .footer-bottom {
+        flex-direction: row;
+    }
+}
