@@ -694,3 +694,50 @@ a {
         margin-left: 0;
     }
 }
+
+.quote-section {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.quote-card {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 3rem 2rem;
+    background-color: var(--background);
+    /* A nice subtle shadow */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.quote-bg-icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: var(--border);
+    opacity: 0.5; 
+    z-index: 0;
+}
+
+.quote-text {
+    position: relative;
+    z-index: 10;
+    font-family: monospace;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.quote-author {
+    position: relative;
+    z-index: 10;
+    text-align: right;
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: var(--foreground);
+    font-style: italic;
+    font-weight: 600;
+}
