@@ -524,3 +524,173 @@ a {
     height: 18px;
 }
 
+.journey-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.journey-card {
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--background);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.journey-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-secondary);
+}
+
+.journey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.journey-info-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.journey-logo {
+    width: 48px;
+    height: 48px;
+    background-color: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--foreground);
+    flex-shrink: 0;
+}
+
+.journey-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.journey-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.journey-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.journey-role {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.journey-meta {
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    min-width: 130px;
+    flex-shrink: 0;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+.status-badge.active .status-dot {
+    background-color: #22c55e;
+}
+
+.status-badge.completed {
+    background-color: var(--secondary);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+.status-badge.completed .status-dot {
+    background-color: var(--text-secondary);
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    70% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.journey-body {
+    margin-left: 4rem; /* Aligns exactly under the text, skipping the logo */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.journey-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.journey-highlights {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.highlight-pill {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--foreground);
+    background-color: var(--secondary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+    .journey-header {
+        flex-direction: column;
+    }
+    .journey-meta {
+        text-align: left;
+        margin-left: 4rem;
+    }
+    .journey-body {
+        margin-left: 0;
+    }
+    .journey-meta {
+        margin-left: 0;
+    }
+}
