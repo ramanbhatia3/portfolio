@@ -1,5 +1,5 @@
 import { FiFileText, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi'
-
+import { GitHubCalendar } from 'react-github-calendar'
 
 const Hero = () => {
     return (
@@ -44,6 +44,34 @@ const Hero = () => {
                 <a href="mailto:bhatia3r@gmail.com" target="_blank" className=" hover:text-neutral-900 dark:hover:text-neutral-100 transition-all hover:-translate-y-1">
                     <FiMail size={20} />
                 </a>
+            </div>
+
+            <div className='mt-8 pt-8 border-t border-black/10 dark:border-white/10'>
+                <p className='text-xs font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-widest mb-6'>
+                    Contributions
+                </p> 
+
+                <div className='w-full flex justify-start sm:hidden'>
+                    <GitHubCalendar 
+                        username="ramanbhatia3" 
+                        colorScheme="dark" 
+                        blockSize={12}
+                        blockMargin={4}
+                        fontSize={12}
+                        transformData={(data) => data.slice(-120)}
+                    />
+                </div>
+
+                <div className='w-full hidden sm:flex sm:justify-end'>
+                    <GitHubCalendar 
+                        username="ramanbhatia3" 
+                        colorScheme="dark" 
+                        blockSize={12}
+                        blockMargin={4}
+                        fontSize={12}
+                        transformData={(data) => data.slice(-280)}
+                    />
+                </div>
             </div>
 
         </header>
