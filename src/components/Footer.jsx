@@ -3,7 +3,7 @@ import { FiLinkedin, FiGithub, FiInstagram } from 'react-icons/fi'
 
 const Footer = () => {
     return (
-        <footer className='mt-15 pb-8'>
+        <footer className='mt-15 pb-8 font-semibold'>
 
             <div className="flex flex-col sm:flex-row justify-between gap-12 sm:gap-6 mb-16">
                 <div>
