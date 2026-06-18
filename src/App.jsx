@@ -25,6 +25,11 @@ function App() {
                   </>
                 }
               />
+              <Route path="/projects" element={
+                <div className="animate-in fade-in duration-500 mt-4 sm:mt-8">
+                  <Projects />
+                </div>
+              } />
               <Route path="/about" element={<About />} />
               <Route path="/blogs" element={<Blogs />} />
             </Routes>
