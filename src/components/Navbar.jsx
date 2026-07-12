@@ -11,8 +11,7 @@ const Navbar = () => {
                     <img src="/logo.png" alt="Raman" className='w-10 h-10 rounded-full object-cover border border-black/10 dark:border-white/10 transition-transform hover:scale-95' />
                 </Link>
 
-                <div className='flex gap-4'>
-                    <Link to="/about" className="text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">About Me</Link>
+                <div className='flex gap-5'>
                     <Link to="/projects" className="text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Projects</Link>
                     <Link to="/blogs" className="text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Blogs</Link>
                 </div>

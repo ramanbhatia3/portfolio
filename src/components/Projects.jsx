@@ -1,31 +1,39 @@
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
+const SkillItem = ({ color, name }) => (
+  <div className="flex items-center gap-2">
+    <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: color }}></div>
+    <span className="font-mono text-[13px] text-neutral-700 dark:text-neutral-300">{name}</span>
+  </div>
+);
+
 const Projects = () => {
   const projects = [
     {
-      title: "Stunnet",
-      date: "May 2026",
-      tech: "MERN, Tailwind CSS",
-      description:
-        "A full-stack campus management platform featuring a centralized news feed, academic resource vault, and Cloudinary integration for secure uploads.",
+      title: "STUNNET",
+      description: "A full-stack campus management platform featuring a centralized news feed, academic resource vault, placement board, and student directory. Integrated Cloudinary for secure file uploads and optimized database cleanup.",
+      image: "/stunnet-preview.png", 
+      skills: [
+        { name: "React.js", color: "#61DAFB" },
+        { name: "Node.js", color: "#339933" },
+        { name: "Express.js", color: "#d4d4d8" },
+        { name: "MongoDB", color: "#47A248" },
+        { name: "Tailwind CSS", color: "#38B2AC" }
+      ],
       liveLink: "https://stunnet.vercel.app/",
       githubLink: "https://github.com/ramanbhatia3/stunnet",
     },
-    {
-      title: "CityCare",
-      date: "October 2025",
-      tech: "MERN, Tailwind CSS",
-      description:
-        "A hackathon-winning civic issue reporting platform. Bridges citizens and authorities with real-time tracking and secure JWT/OTP authentication.",
-      liveLink: "https://citycarepseudocoders.vercel.app/",
-      githubLink: "https://github.com/ramanbhatia3/CityCare",
-    },
+
     {
       title: "100xDevs Clone",
-      date: "April 2026",
-      tech: "React.js, Tailwind",
-      description:
-        "A pixel-perfect, responsive frontend clone of the 100xDevs platform built with reusable React components and modern UI elements.",
+      description: "A pixel-perfect, responsive frontend clone of the 100xDevs platform built with reusable React components, modern landing pages, and interactive UI elements for seamless cross-device compatibility.",
+      image: "/100xdevsclone-preview.png", 
+      skills: [
+        { name: "React.js", color: "#61DAFB" },
+        { name: "JavaScript", color: "#F7DF1E" },
+        { name: "HTML5", color: "#E34F26" },
+        { name: "Tailwind CSS", color: "#38B2AC" }
+      ],
       liveLink: "https://100xdevsclone.vercel.app/",
       githubLink: "https://github.com/ramanbhatia3/100xDevs",
     },
@@ -36,62 +44,81 @@ const Projects = () => {
       id="projects"
       className="mt-16 pt-8 border-t border-black/10 dark:border-white/10"
     >
-      <div className="mb-6 flex items-baseline justify-between">
-        <div>
-          <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-widest mb-6">
-            Projects
-          </p>
-        </div>
+      <div className="mb-10">
+        <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-widest mb-1">
+          FEATURED PROJECTS
+        </p>
       </div>
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="flex flex-col gap-12 sm:gap-16">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col p-4 border border-black/10 dark:border-white/10 rounded-xl bg-neutral-50 dark:bg-[#161616] hover:border-black/20 dark:hover:border-white/20 transition-colors group"
+            className="flex flex-col md:flex-row gap-6 sm:gap-10 items-start group"
           >
-            <div className="flex justify-between items-start mb-2">
-              <h3 className="text-[15px] font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
-                {project.title}
-              </h3>
-              <span className="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 uppercase tracking-wider">
-                {project.date}
-              </span>
+            <div className="w-full md:w-1/2 lg:w-[50%] m-auto rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#1a1a1a] shadow-sm transition-transform duration-300 group-hover:-translate-y-1 shrink-0">
+              
+              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-black/10 dark:border-white/10 bg-white/50 dark:bg-[#222]">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+              </div>
+              
+              <div className="aspect-[16/8] w-full bg-neutral-200 dark:bg-[#111]">
+                <img
+                  src={project.image}
+                  alt={`${project.title} Preview`}
+                  className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+                />
+              </div>
             </div>
 
-            <p className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 mb-2">
-              {project.tech}
-            </p>
+            <div className="w-full md:w-1/2 lg:w-[45%] flex flex-col h-full py-1">
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                {project.title}
+              </h3>
 
-            <p className="text-[13px] text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
-              {project.description}
-            </p>
+              <p className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
+                {project.description}
+              </p>
+
+              <div className="mb-6">
+                <p className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest mb-3">
+                  Technologies Used
+                </p>
+                <div className="flex flex-wrap text-xs font-semibold gap-x-5 gap-y-3">
+                  {project.skills.map((skill, idx) => (
+                    <SkillItem key={idx} color={skill.color} name={skill.name} />
+                  ))}
+                </div>
+              </div>
 
 
-            <div className="flex gap-3 mt-auto pt-4 border-t border-black/5 dark:border-white/5">
-              {project.githubLink && (
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
-                  aria-label="GitHub Repository"
-                >
-                  <FiGithub size={16} />
-                </a>
-              )}
-              {project.liveLink && (
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
-                  aria-label="Live Demo"
-                >
-                  <FiExternalLink size={16} />
-                </a>
-              )}
+              <div className="mt-auto pt-2 flex gap-3">
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-opacity shadow-sm"
+                  >
+                    <FiExternalLink size={14} />
+                    Live
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm"
+                  >
+                    <FiGithub size={14} />
+                    GitHub
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}
