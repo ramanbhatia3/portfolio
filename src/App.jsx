@@ -11,9 +11,8 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white dark:bg-[#111111] text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+        <Navbar />
         <div className="max-w-[750px] mx-auto w-[92%]">
-          <Navbar />
-
           <main className="px-2 pb-20">
             <Routes>
               <Route

@@ -1,9 +1,9 @@
-import { FiFileText, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FiFileText, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import { GitHubCalendar } from 'react-github-calendar';
 
 const SkillItem = ({ color, name }) => (
     <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: color }}></div>
+        <div className="w-2 h-2 rounded-xs" style={{ backgroundColor: color }}></div>
         <span className="text-sm font-semibold text-[13px] text-neutral-700 dark:text-neutral-300">{name}</span>
     </div>
 );
@@ -43,18 +43,17 @@ const Hero = () => {
                 </div>
             </div>
 
-
             <p className='text-[14px] font-medium text-neutral-600 dark:text-neutral-400 leading-relaxed mt-2 max-w-[600px]'>
                 Hey there. I'm a final year Computer Science student and I love building interactive web apps using MERN Stack alongwith Tailwind CSS. Always eager to learn more.
             </p>
 
-
             <div className='flex flex-col sm:flex-row gap-3 mt-2'>
                 <a href="#" className='inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md text-xs font-semibold border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'>
                     <FiFileText size={14} />
-                    Resume / CV
+                    Resume
                 </a>
-                <a href="mailto:bhatia3r@gmail.com" className='inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md text-xs font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-75 transition-opacity shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhatia3r@gmail.com" target="_blank" rel="noreferrer" className='inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md text-xs font-semibold bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-75 transition-opacity shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'>
+                    <FiMail size={14} />
                     Get in touch
                 </a>
             </div>
@@ -84,13 +83,13 @@ const Hero = () => {
                 </div>
             </div>
 
-
             <div className='mt-8 pt-8 border-t border-black/10 dark:border-white/10'>
                 <p className='text-xs font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-widest mb-6'>
                     GitHub Contributions
                 </p> 
 
-                <div className='w-full flex justify-center sm:hidden'>
+                {/* Mobile Light Mode */}
+                <div className='w-full flex justify-center sm:hidden dark:hidden'>
                     <GitHubCalendar 
                         username="ramanbhatia3" 
                         colorScheme="light" 
@@ -101,7 +100,32 @@ const Hero = () => {
                     />
                 </div>
 
-                <div className='w-full hidden sm:flex justify-center'>
+                {/* Mobile Dark Mode */}
+                <div className='w-full hidden dark:flex dark:sm:hidden justify-center'>
+                    <GitHubCalendar 
+                        username="ramanbhatia3" 
+                        colorScheme="dark" 
+                        blockSize={8} 
+                        blockMargin={5} 
+                        fontSize={10} 
+                        transformData={(data) => data.slice(-150)}
+                    />
+                </div>
+
+                {/* Desktop Light Mode */}
+                <div className='w-full hidden sm:flex dark:hidden justify-center'>
+                    <GitHubCalendar 
+                        username="ramanbhatia3" 
+                        colorScheme="light" 
+                        blockSize={10} 
+                        blockMargin={5} 
+                        fontSize={10} 
+                        transformData={(data) => data.slice(-300)}
+                    />
+                </div>
+
+                {/* Desktop Dark Mode */}
+                <div className='w-full hidden dark:sm:flex justify-center'>
                     <GitHubCalendar 
                         username="ramanbhatia3" 
                         colorScheme="dark" 
