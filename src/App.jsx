@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Blogs from "./components/Blogs";
@@ -10,6 +11,7 @@ import Journey from "./components/Journey";
 function App() {
   return (
     <Router>
+      <Analytics />
       <div className="min-h-screen bg-white dark:bg-[#111111] text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
         <Navbar />
         <div className="max-w-[750px] mx-auto w-[92%]">
