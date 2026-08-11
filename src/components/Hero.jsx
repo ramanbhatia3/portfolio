@@ -4,7 +4,7 @@ import { GitHubCalendar } from 'react-github-calendar';
 const SkillItem = ({ color, name }) => (
     <div className="flex items-center gap-2">
         <div className="w-2 h-2 rounded-xs" style={{ backgroundColor: color }}></div>
-        <span className="text-sm font-semibold text-[13px] text-neutral-700 dark:text-neutral-300">{name}</span>
+        <span className="text-[10px] font-bold uppercase text-neutral-700 dark:text-neutral-300">{name}</span>
     </div>
 );
 
@@ -83,7 +83,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className='mt-8 pt-8 border-t border-black/10 dark:border-white/10'>
+            <div className='mt-8 py-8 border-t border-b border-black/10 dark:border-white/10'>
                 <p className='text-xs font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-widest mb-6'>
                     GitHub Contributions
                 </p> 

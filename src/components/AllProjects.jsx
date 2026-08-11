@@ -8,7 +8,7 @@ const SkillItem = ({ color, name }) => (
   </div>
 );
 
-const Projects = () => {
+const AllProjects = () => {
   const projects = [
     {
       title: "STUNNET",
@@ -76,7 +76,7 @@ const Projects = () => {
       className="mt-12 border-black/10 dark:border-white/10"
     >
       <div className="mb-10">
-        <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-widest mb-1">
+        <p className="text-sm font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-widest mb-1">
           FEATURED PROJECTS
         </p>
       </div>
@@ -132,10 +132,10 @@ const Projects = () => {
 
       <div className="mt-12 flex items-center justify-start">
         <Link
-          to="/projects"
+          to="/"
           className="inline-flex items-center gap-2 m-auto px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm hover:-translate-y-0.5 transition-transform duration-300"
         >
-          View All Projects →
+          ← Back to Home
         </Link>
       </div>
 
@@ -143,4 +143,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default AllProjects;

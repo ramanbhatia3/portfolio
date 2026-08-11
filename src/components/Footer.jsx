@@ -11,12 +11,12 @@ const Footer = () => {
                         Navigate
                     </h4>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-12 gap-y-4">
-                        <Link to="/" className="text-[14px] text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Home</Link>
-                        <Link to="/projects" className="text-[14px] text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Projects</Link>
-                        <Link to="/blogs" className="text-[14px] text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Blogs</Link>
-                        <a href="#resume" className="text-[14px] text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Resume</a>
-                        <a href="#influences" className="text-[14px] text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Influences</a>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-12 gap-y-4 uppercase text-[12px] font-bold">
+                        <Link to="/" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Home</Link>
+                        <Link to="/projects" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Projects</Link>
+                        <Link to="/blogs" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Blogs</Link>
+                        <a href="#resume" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Resume</a>
+                        <a href="#influences" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">Influences</a>
                     </div>
                 </div>
 
