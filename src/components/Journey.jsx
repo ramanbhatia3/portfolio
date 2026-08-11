@@ -64,13 +64,13 @@ const HackathonCard = ({ data }) => {
                 
                 <div className="flex flex-wrap gap-2">
                     {data.liveLink && data.liveLink !== "#" && (
-                        <a href={data.liveLink} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 bg-neutral-100 hover:bg-neutral-200 dark:bg-[#222] dark:hover:bg-[#333] text-neutral-900 dark:text-neutral-100 text-[11px] font-bold rounded-xs transition-colors border border-black/5 dark:border-white/5 shadow-sm">
+                        <a href={data.liveLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border bg-neutral-900 dark:border-black/10 border-white/10 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-opacity shadow-sm hover:-translate-y-0.5 transition-transform duration-300">
                             <FiExternalLink size={12} />
                             Live
                         </a>
                     )}
                     {data.githubLink && data.githubLink !== "#" && (
-                        <a href={data.githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 bg-neutral-100 hover:bg-neutral-200 dark:bg-[#222] dark:hover:bg-[#333] text-neutral-900 dark:text-neutral-100 text-[11px] font-bold rounded-xs transition-colors border border-black/5 dark:border-white/5 shadow-sm">
+                        <a href={data.githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm hover:-translate-y-0.5 transition-transform duration-300">
                             <FiGithub size={12} />
                             GitHub
                         </a>

@@ -1,8 +1,9 @@
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const SkillItem = ({ color, name }) => (
   <div className="flex items-center gap-2">
-    <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: color }}></div>
+    <div className="w-2 h-2 rounded-xs" style={{ backgroundColor: color }}></div>
     <span className="font-mono text-[13px] text-neutral-700 dark:text-neutral-300">{name}</span>
   </div>
 );
@@ -12,7 +13,7 @@ const Projects = () => {
     {
       title: "STUNNET",
       description: "A full-stack campus management platform featuring a centralized news feed, academic resource vault, placement board, and student directory. Integrated Cloudinary for secure file uploads and optimized database cleanup.",
-      image: "/stunnet-preview.png", 
+      image: "/project_previews/stunnet.png", 
       skills: [
         { name: "React.js", color: "#61DAFB" },
         { name: "Node.js", color: "#339933" },
@@ -27,7 +28,7 @@ const Projects = () => {
     {
       title: "100xDevs Clone",
       description: "A pixel-perfect, responsive frontend clone of the 100xDevs platform built with reusable React components, modern landing pages, and interactive UI elements for seamless cross-device compatibility.",
-      image: "/100xdevsclone-preview.png", 
+      image: "/project_previews/100xdevsclone.png",
       skills: [
         { name: "React.js", color: "#61DAFB" },
         { name: "JavaScript", color: "#F7DF1E" },
@@ -50,28 +51,18 @@ const Projects = () => {
         </p>
       </div>
 
-
       <div className="flex flex-col gap-12 sm:gap-16">
         {projects.map((project, index) => (
           <div
             key={index}
             className="flex flex-col md:flex-row gap-6 sm:gap-10 items-start group"
           >
-            <div className="w-full md:w-1/2 lg:w-[50%] m-auto rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#1a1a1a] shadow-sm transition-transform duration-300 group-hover:-translate-y-1 shrink-0">
-              
-              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-black/10 dark:border-white/10 bg-white/50 dark:bg-[#222]">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-              </div>
-              
-              <div className="aspect-[16/8] w-full bg-neutral-200 dark:bg-[#111]">
-                <img
-                  src={project.image}
-                  alt={`${project.title} Preview`}
-                  className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
+            <div className="w-full md:w-1/2 lg:w-[50%] m-auto bg-neutral-200 dark:bg-[#111] shadow-sm transition-transform duration-300 hover:-translate-y-1 shrink-0 aspect-video">
+              <img
+                src={project.image}
+                alt={`${project.title} Preview`}
+                className="w-full opacity-90 hover:opacity-100 transition-opacity"
+              />
             </div>
 
             <div className="w-full md:w-1/2 lg:w-[45%] flex flex-col h-full py-1">
@@ -94,14 +85,13 @@ const Projects = () => {
                 </div>
               </div>
 
-
               <div className="mt-auto pt-2 flex gap-3">
                 {project.liveLink && (
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-opacity shadow-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-opacity shadow-sm hover:-translate-y-0.5 transition-transform duration-300"
                   >
                     <FiExternalLink size={14} />
                     Live
@@ -112,7 +102,7 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm hover:-translate-y-0.5 transition-transform duration-300"
                   >
                     <FiGithub size={14} />
                     GitHub
@@ -123,6 +113,16 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      <div className="mt-12 flex items-center justify-start">
+        <Link
+          to="/projects"
+          className="inline-flex items-center gap-2 m-auto px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm hover:-translate-y-0.5 transition-transform duration-300"
+        >
+          View All Projects →
+        </Link>
+      </div>
+
     </section>
   );
 };
