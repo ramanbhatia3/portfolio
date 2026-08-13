@@ -1,5 +1,5 @@
-import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { FiGithub, FiExternalLink, FiFileText } from "react-icons/fi";
 
 const SkillItem = ({ color, name }) => (
   <div className="flex items-center gap-2">
@@ -11,6 +11,7 @@ const SkillItem = ({ color, name }) => (
 const AllProjects = () => {
   const projects = [
     {
+      id: "stunnet",
       title: "STUNNET",
       description: "A full-stack campus management platform featuring a centralized news feed, academic resource vault, placement board, and student directory. Integrated Cloudinary for secure file uploads.",
       image: "/project_previews/stunnet.png", 
@@ -26,6 +27,7 @@ const AllProjects = () => {
     },
 
     {
+      id: "crickers",
       title: "Crickers",
       description: "A minimal, aesthetic, anonymous image-sharing platform built exclusively for cricket fans. Features a responsive, Pinterest-style masonry feed for uploading cricket moments.",
       image: "/project_previews/crickers.png", 
@@ -41,6 +43,7 @@ const AllProjects = () => {
     },
 
     {
+      id: "100xdevsclone",
       title: "100xDevs Clone",
       description: "A pixel-perfect, responsive frontend clone of the 100xDevs platform built with reusable React components, modern landing pages, and interactive UI elements for seamless cross-device compatibility.",
       image: "/project_previews/100xdevsclone.png",
@@ -55,6 +58,7 @@ const AllProjects = () => {
     },
 
     {
+      id: "gameshipperz",
       title: "GameShipperz",
       description: "A full-stack gaming e-commerce and article platform. Built completely on the MERN stack, featuring robust JWT authentication for secure user sessions and a fully responsive frontend design.",
       image: "/project_previews/gameshipperz.png", 
@@ -114,7 +118,13 @@ const AllProjects = () => {
               </div>
 
               <div className="mt-auto pt-2 flex gap-3">
-                 {project.liveLink && (
+                <Link 
+                  to={`/projects/${project.id}`} 
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm hover:-translate-y-0.5 transition-transform duration-300"
+                >
+                  <FiFileText size={14} /> Read Article
+                </Link>
+                {project.liveLink && (
                   <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border bg-neutral-900 dark:border-black/10 border-white/10 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-opacity shadow-sm hover:-translate-y-0.5 transition-transform duration-300">
                     <FiExternalLink size={14} /> Live
                   </a>

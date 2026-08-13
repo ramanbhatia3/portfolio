@@ -8,6 +8,7 @@ import Quote from "./components/Quote";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import AllProjects from "./components/AllProjects";
+import ProjectDetails from "./components/ProjectDetails";
 import Journey from "./components/Journey";
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
                   <AllProjects />
                 </div>
               } />
+
+              <Route path="/projects/:id" element={<ProjectDetails />} />
+              
               <Route path="/blogs" element={<Blogs />} />
             </Routes>
           </main>
