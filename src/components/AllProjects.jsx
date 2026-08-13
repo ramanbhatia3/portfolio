@@ -92,7 +92,7 @@ const AllProjects = () => {
             key={index}
             className="flex flex-col group"
           >
-            <div className="w-full bg-neutral-200 dark:bg-[#111] shadow-sm transition-transform duration-300 hover:-translate-y-1 aspect-video mb-2">
+            <div className="w-full transition-transform duration-300 hover:-translate-y-1 aspect-video mb-2">
               <img
                 src={project.image}
                 alt={`${project.title} Preview`}

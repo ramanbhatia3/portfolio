@@ -94,7 +94,7 @@ const ProjectDetails = () => {
         </p>
       </div>
 
-      <div className="w-full bg-neutral-200 dark:bg-[#111] border border-black/10 dark:border-white/10 mb-8">
+      <div className="w-full mb-8">
         <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
       </div>
 
