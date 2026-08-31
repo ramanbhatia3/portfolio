@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { FiGithub, FiExternalLink, FiFileText } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const SkillItem = ({ color, name }) => (
   <div className="flex items-center gap-2">
@@ -85,7 +85,6 @@ const Projects = () => {
         </p>
       </div>
 
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 mt-6">
         {projects.map((project, index) => (
           <div
@@ -120,18 +119,31 @@ const Projects = () => {
               <div className="mt-auto pt-2 flex gap-3">
                 <Link 
                   to={`/projects/${project.id}`} 
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm hover:-translate-y-0.5 transition-transform duration-300"
+                  aria-label="Read Article"
+                  className="flex items-center justify-center w-9 h-9 rounded-md border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-all shadow-sm hover:-translate-y-0.5"
                 >
-                  <FiFileText size={14} /> Read Article
+                  <FiFileText size={16} />
                 </Link>
                 {project.liveLink && (
-                  <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border bg-neutral-900 dark:border-black/10 border-white/10 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-opacity shadow-sm hover:-translate-y-0.5 transition-transform duration-300">
-                    <FiExternalLink size={14} /> Live
+                  <a 
+                    href={project.liveLink} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    aria-label="Live Demo"
+                    className="flex items-center justify-center w-9 h-9 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-all shadow-sm hover:-translate-y-0.5"
+                  >
+                    <FiExternalLink size={16} />
                   </a>
                 )}
                 {project.githubLink && (
-                  <a href={project.githubLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-colors shadow-sm hover:-translate-y-0.5 transition-transform duration-300">
-                    <FiGithub size={14} /> GitHub
+                  <a 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    aria-label="GitHub Repository"
+                    className="flex items-center justify-center w-9 h-9 rounded-md border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-all shadow-sm hover:-translate-y-0.5"
+                  >
+                    <FiGithub size={16} />
                   </a>
                 )}
               </div>
