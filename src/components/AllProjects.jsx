@@ -91,24 +91,58 @@ const AllProjects = () => {
             key={index}
             className="flex flex-col group"
           >
-            <div className="w-full transition-transform duration-300 hover:-translate-y-1 aspect-video mb-2">
+            <div className="w-full transition-transform duration-300 hover:-translate-y-1 aspect-video mb-4">
               <img
                 src={project.image}
                 alt={`${project.title} Preview`}
-                className="w-full opacity-90 hover:opacity-100 transition-opacity"
+                className="w-full opacity-90 hover:opacity-100 transition-opacity rounded-sm"
               />
             </div>
 
             <div className="flex flex-col flex-grow">
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-                {project.title}
-              </h3>
+              
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+                  {project.title}
+                </h3>
+                <div className="flex items-center gap-4 text-neutral-400 dark:text-neutral-500">
+                  <Link 
+                    to={`/projects/${project.id}`} 
+                    aria-label="Read Article"
+                    className="hover:text-neutral-900 dark:hover:text-neutral-100 hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <FiFileText size={18} />
+                  </Link>
+                  {project.liveLink && (
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      aria-label="Live Demo"
+                      className="hover:text-neutral-900 dark:hover:text-neutral-100 hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      <FiExternalLink size={18} />
+                    </a>
+                  )}
+                  {project.githubLink && (
+                    <a 
+                      href={project.githubLink} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      aria-label="GitHub Repository"
+                      className="hover:text-neutral-900 dark:hover:text-neutral-100 hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      <FiGithub size={18} />
+                    </a>
+                  )}
+                </div>
+              </div>
 
               <p className="text-[13px] font-medium text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6 line-clamp-5">
                 {project.description}
               </p>
 
-              <div className="mb-6">
+              <div className="mt-auto">
                 <div className="flex flex-wrap font-bold gap-x-4 gap-y-2 uppercase tracking-widest">
                   {project.skills.map((skill, idx) => (
                     <SkillItem key={idx} color={skill.color} name={skill.name} />
@@ -116,37 +150,6 @@ const AllProjects = () => {
                 </div>
               </div>
 
-              <div className="mt-auto pt-2 flex gap-3">
-                <Link 
-                  to={`/projects/${project.id}`} 
-                  aria-label="Read Article"
-                  className="flex items-center justify-center w-9 h-9 rounded-md border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-all shadow-sm hover:-translate-y-0.5"
-                >
-                  <FiFileText size={16} />
-                </Link>
-                {project.liveLink && (
-                  <a 
-                    href={project.liveLink} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    aria-label="Live Demo"
-                    className="flex items-center justify-center w-9 h-9 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition-all shadow-sm hover:-translate-y-0.5"
-                  >
-                    <FiExternalLink size={16} />
-                  </a>
-                )}
-                {project.githubLink && (
-                  <a 
-                    href={project.githubLink} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    aria-label="GitHub Repository"
-                    className="flex items-center justify-center w-9 h-9 rounded-md border border-black/10 dark:border-white/10 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-[#1a1a1a] transition-all shadow-sm hover:-translate-y-0.5"
-                  >
-                    <FiGithub size={16} />
-                  </a>
-                )}
-              </div>
             </div>
           </div>
         ))}
